@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.one;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,12 +6,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.one.ComposedBean;
-import com.example.one.Prototype;
-import com.example.one.Singlton;
-
 @Configuration
-@ComponentScan({"com.example.one","com.example.demo"}) // default scan is the current package only like com.example.demo.* ....
+@ComponentScan({"com.example.one"}) // default scan is the current package only like com.example.one.* ....
 @SpringBootApplication
 public class Application {
 
@@ -21,7 +17,6 @@ public class Application {
 		System.out.println(context.getBean(Singlton.class).x);
 		System.out.println(context.getBean("proto6" ,Prototype.class).x);
 		System.out.println(context.getBean(ComposedBean.class).singlton.x);
-
 
 	}
 }
