@@ -7,7 +7,10 @@ import org.springframework.stereotype.Component;
 /**
  * Interceptor which for each created bean wait until the random returns even
  * value
- * 
+ * PostProcessor Flow:
+ * 1)BeforeInit
+ * 2)Init function of the bean
+ * 3)AfterInit
  * @author cp
  *
  */
